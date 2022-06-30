@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<h1 class="titulo" id="contacto">Contáctanos</h1>
+<div class="container2">
+{% if 'ok' in request.GET %}
+  <h1>Mensaje enviado</h1>
+{%endif%}
+  <form id="basic-form"  method="post">
+      {% csrf_token %}
+   <div class="row">
+      <div class="col-md-4"></div>
+           <div class="col-md-6">
+               <h2>Ingrese sus datos</h2>
+               <div class="form-group">
+                   <label for="nombre">Name: </label><br>
+                   {{form.name}}
+
+
+                 </div>
+                 <div class="form-group">
+                     <label for="nombres">Email:</label><br>
+                     {{form.email}}
+
+                    </div>
+
+                    <div class="form-group">
+                      <label for="nombres">Contenido:</label><br>
+                      {{form.content}}
+                    </div>
+                    <p class="text-warning">*Debe completar todos los campos para enviar</p>
+                    <button type="submit" class="botton" id="enviar">Enviar</button>
+                   </div>
+             </div>
+           </div>
+     </form>
+    </div>
+
+
+{% endblock %}

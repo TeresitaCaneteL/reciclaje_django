@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <h1 class="titulo">Planes</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Plan 1</h5>
+          <p class="card-text">Una extracción a la semana $5000</p>
+          <a href="{% url 'contact:contact' %}" class="botton">Contáctanos</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Plan 2</h5>
+        <p class="card-text">Una extracción a la semana $5000</p>
+        <a href="{% url 'contact:contact' %}" class="botton">Contáctanos</a>
+      </div>
+    </div>
+  </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Plan 3</h5>
+          <p class="card-text">Una extracción a la semana $5000</p>
+          <a href="{% url 'contact:contact' %}" class="botton">Contáctanos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

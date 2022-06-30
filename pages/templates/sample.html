@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="header">
+  <h2></h2>
+</div>
+<section class="container">
+  <div class="row">
+    <div class="rightcolumn">
+
+        <h1><strong>{{page.title}}</strong></h1>.</strong></h1>
+
+    </div>
+    <div class="rightcolumn">
+      <div class="l">
+        <p>{{page.content}}, </p>
+
+
+      </div>
+    </div>
+    <div>
+      {% if user.is_authenticated %}
+      <p><a href="{% url 'admin:pages_page_change' page.id %}">Editar</a></p>
+      {%endif%}
+    </div>
+  </div>
+
+</section>
+
+
+
+{% endblock %}

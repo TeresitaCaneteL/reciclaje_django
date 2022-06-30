@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+{% for post in category.get_posts.all %}
+
+<div class="header">
+  <h2></h2>
+</div>
+<section class="container">
+  <div class="row">
+    <div class="rightcolumn">
+      <div>
+        <span><p>{{post.published}}</p></span>
+        <p><strong>Publicado por:</strong>  {{post.author}}.</p>
+      </div>
+    </div>
+    <div class="leftcolumn">
+      <div class="card">
+        <h1>{{post.title}}</h1>
+        <div class="fakeimg img-fluid"><img src="{{post.image.url}}" width="100%" height="100%" alt="..."></div>
+
+      </div>
+    </br>
+    <p>{{post.content}}.</p>
+    <em>
+
+      <p>Categorías: </p>
+      {% for category in post.categories.all %}
+      <a class="link" href="{% url 'blog:category' category.id %}">{{category.name}}</a>{% if not forloop.last  %},{% endif %}
+      {%endfor%}
+    </em>
+    </div>
+  </div>
+
+</section>
+
+
+{%endfor%}
+
+{% endblock %}
+
+
